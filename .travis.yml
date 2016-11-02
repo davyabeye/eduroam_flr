@@ -24,6 +24,6 @@ install:
 script:
   # Basic role syntax check
   - echo "Starting test of the playbook"
-  - ansible-playbook -i inventories/eduroam-flr.wacren.net roaming_operator.yml --syntax-check
+  - ansible-playbook -i inventories/eduroam-flr.wacren.net roaming_operator.yml --syntax-check --vault-pass-file=vault-pass
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

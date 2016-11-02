@@ -1,0 +1,21 @@
+- hosts: ro
+  become: True
+  gather_facts: False
+  tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt install -y python-minimal)
+
+- name: Install eduroam Roaming Operator
+  hosts: ro
+  become: True
+  vars_files:
+    - group_vars/secrets.yml.example
+  roles:
+    - { radsecproxy, become: true}
+    # - { role: newrelic, when: play_newrelic == True }
+# these handlers should  be in the role itself, not in the play
+  handlers:
+    - name: restart radsecproxy
+      service: name=radsecproxy state=restarted
+    - name: restart rsyslog
+      service: name=rsyslog state=restarted
