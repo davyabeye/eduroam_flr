@@ -1,0 +1,13 @@
+flr1 ansible_ssh_host=eduroam-flr.wacren.net 
+#flra ansible_ssh_host=<FQDN or IP>
+
+[eduroam-flr.wacren.net:children]
+ro
+
+[ro]
+flr1
+#flra
+
+[ro:vars]
+ansible_user=ubuntu
+
