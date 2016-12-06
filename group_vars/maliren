@@ -1,0 +1,32 @@
+tld: ml
+
+#Replace with your actual member institutions.
+institutions:
+  -
+    name: MaliREN
+    host: 139.162.219.66
+    realm: maliren.ml
+    secret: "{{ myuni_idp_secret }}"
+  # -
+  #   name: OTHERUNI_IdP_SP
+  #   host: 5.6.7.8
+  #   realm: otheruni.edu
+  #   secret: "{{ otheruni_idp_secret }}"
+
+
+# FQDN of default Forwarding Continental Servers
+continental_proxies:
+  -
+    name: etlr1.eduroam.org
+    ip4: 192.87.106.34
+    ip6: 0:0:0:0:0:0:0:0
+    type: UDP
+  -
+    name: etlr2.eduroam.org
+    ip4: 130.225.242.109
+    ip6: 0:0:0:0:0:0:0:0
+    type: UDP
+
+# Role for monitoring Radius server with NewRelic
+play_newrelic: False
+

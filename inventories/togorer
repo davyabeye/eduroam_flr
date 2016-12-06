@@ -1,0 +1,13 @@
+flr1 ansible_ssh_host=178.79.155.177 
+#flra ansible_ssh_host=<FQDN or IP>
+
+[togorer:children]
+ro
+
+[ro]
+flr1
+#flra
+
+[ro:vars]
+ansible_user=ubuntu
+
